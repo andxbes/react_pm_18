@@ -1,1 +1,1 @@
-https://localhost
+https://localhost/ap-automation/
