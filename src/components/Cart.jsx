@@ -15,8 +15,12 @@ export default function Cart(params) {
     function handleCloseCart() {
         userProgressCtx.hideCart();
     }
+    function handleGoTOCheckout() {
+        userProgressCtx.showCheckout();
+    }
     return (
-        <Modal className="cart" open={userProgressCtx.progress === 'cart'}>
+        <Modal className="cart" open={userProgressCtx.progress === 'cart'}
+            onClose={userProgressCtx.progress === 'cart' ? handleCloseCart : null}>
             <h2>Your Cart</h2>
             <ul>
                 {carCtx.items.map(item => (
@@ -31,7 +35,8 @@ export default function Cart(params) {
             <p className="cart-total">{currencyFormatter.format(cartTotal)}</p>
             <p className="modal-actions">
                 <Button onClick={handleCloseCart}>Close</Button>
-                <Button onClick={handleCloseCart}>Go to Checkout</Button>
+                {carCtx.items.length > 0 && <Button onClick={handleGoTOCheckout}>Go to Checkout</Button>}
+
             </p>
         </Modal>
     );
