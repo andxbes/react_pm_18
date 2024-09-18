@@ -249,6 +249,17 @@ h1 {
   background-color: rgba(0, 0, 0, 0.55);
 }
 
+.error {
+  background-color: rgb(219, 84, 84);
+  display: inline-flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 5px 15px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @keyframes fade-slide-up {
   from {
     opacity: 0;
